@@ -34,18 +34,18 @@ const allInOne = {
 
 //---------------- default ----------------
 gulp.task('default', cb => {
-  runSequence([
+  runSequence(
     'clean:dest',
     'copy',
     'jsmin',
     'cssmin',
     'imagemin',
-    cb]
+    cb
   );
 });
 
 gulp.task('build', cb => {
-  runSequence([
+  runSequence(
     'clean:allInOne',
     'clean:dest',
     'copy',
@@ -53,7 +53,7 @@ gulp.task('build', cb => {
     'jsmin:custom',
     'cssmin',
     'imagemin',
-    cb]
+    cb
   );
 });
 
